@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Time Capsule</title>
+
+    <link rel="stylesheet" href="file.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Digital Time Capsule</h1>
+
+        <!-- Dark/Light Mode Toggle -->
+        <label class="switch" for="mode-toggle">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider"></span>
+        </label>
+        <span id="mode-label">Toggle Dark Mode</span>
+
+        <!-- Message & Unlock Time Form -->
+        <form id="time-capsule-form">
+            <textarea id="message" class="message-input" placeholder="Write a message to your future self..." required></textarea>
+
+            <input type="text" id="unlock-time" class="time-picker" placeholder="Select a date/time" required>
+
+            <button type="submit" class="submit-btn">Save Message</button>
+        </form>
+
+        <!-- Image Upload Section -->
+        <div class="image-upload-section">
+            <form action="/upload" enctype="multipart/form-data">
+
+                <label for="image-upload">Choose an image to upload:</label>
+
+                <button type="button" class="upload-btn" id="upload-trigger">
+                    Select Image
+                </button>
+
+                <input type="file" id="image-upload" name="image" accept="image/*">
+            </form>
+        </div>
+
+        <!-- Section for displaying uploaded messages -->
+        <div id="message-container" class="message-container"></div>
+
+        <!-- User Authentication Section -->
+        <div id="auth-container">
+            <button id="google-sign-in" class="google-sign-in-btn">Sign In with Google</button>
+            <button id="sign-out" class="google-sign-out-btn">Sign Out</button>
+            <div id="user-info" >
+                <p id="user-name"></p>
+                <p id="user-email"></p>
+            </div>
+        </div>
+
+    </div>
+    <script src="config.js"></script>  
+    <script type="module" src="file.js" defer></script>
+</body>
+
+</html>

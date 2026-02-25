@@ -1,0 +1,7 @@
+# Ignore config.js that contains Firebase API keys
+config.js
+
+# Optionally, ignore other files like node_modules, build directories, etc.
+node_modules/
+dist/
+build/
